@@ -8,6 +8,10 @@ class SSRTest extends React.Component {
             users: response.data
         }
     }
+    async click() {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users/');
+        console.log(response);
+    }
 
     render() {
         const { users } = this.props;
@@ -15,12 +19,13 @@ class SSRTest extends React.Component {
         const userList = users.map(
             user => <li key={user.id}>{user.username}</li>
         )
-
+        
         return (
             <Layout>
                 <ul>
                     {userList}
                 </ul>
+                <button onClick={this.click}>클릭</button>
             </Layout>
         );
     }
