@@ -10,7 +10,7 @@ const Index = () => (
             안녕, Next.js
         </h1>
         <h2>
-            <Link href="/about">
+            <Link href="/about?title=홍길동" as={`/p/test`}>
                 <a style={{ background: 'black', color: 'white' }}>소개</a>
             </Link>
         </h2>
